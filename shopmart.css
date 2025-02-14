@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+body {
+    background: linear-gradient(to right,lavender, lightpink, lightblue);
+}
+ .title {
+    font-size: 2rem;
+    color: aliceblue;
+    padding: 0;
+ }
+ .title h1 {
+    padding: 0;
+    text-align: center;
+    font-family: 'Dancing Script';
+ }
+
+#text {
+    background-color: lightseagreen;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+#game {
+    display: block;
+    border: 2px solid white;
+    border-radius: 5px;
+    max-width: 50%;
+    max-height: 600px;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 10px;
+}
+#controls, #stats {
+    border: 1px solid white;
+    padding: 5px;
+    color: black;
+}
+#storeStats {
+    background: pink;
+    padding: 10px;
+    display: none;
+    border: 1px solid magenta;
+}
+button {
+    border: none;
+    background-color: lightpink;
+    padding: 10px;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: rgb(250, 207, 214);
+}
