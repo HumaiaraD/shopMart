@@ -9,3 +9,5 @@ In this game, you start with a modest amount of money ($100) and a basic invento
 Coding:
 I used simple Javascript, CSS, HTML coding for this game. 
 I am still working on it. Let me know what changes i can make in this project. I will also create a restart/ gameover function. Working on it slowly. Still wanted to share my work so far.
+
+![Screenshot 2025-02-14 153405](https://github.com/user-attachments/assets/f4eb946c-57a1-45f3-9997-05943125f6a8)
