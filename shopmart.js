@@ -42,8 +42,8 @@ const locations = [
     },
     {
         name: "Restart",
-        'button text': ["Restart", "Restart", "Restart", "Go to Town Square"],
-        'button functions': [resetGame, resetGame, resetGame, goTown],
+        'button text': ["Restart", "Restart", "Loan from friend", "Go to Town Square"],
+        'button functions': [resetGame, resetGame, askLoan, goTown],
         text: "Since you're running low on money. Restart."
     }
     
@@ -91,7 +91,7 @@ function chitChat() {
 function walkAround() {
     xp += 5;
     xpText.innerText = xp;
-    text.innerHTML = "You take a walk around the market. You feel refreshed. You see familiar faces. Somebody cooking something delicious. What a wonderful day."
+    text.innerHTML = "You take a walk around the market. You feel refreshed. You see familiar faces. Food smells amazing. What a wonderful day."
 }
 
 function updateStats() {
@@ -109,6 +109,11 @@ function buyVeggie() {
         inventory.push("Vegetables");
         storeStat.style.display = "block";
         text.innerHTML = "You bought some vegetables!"
+        
+        if (money < 30){
+            resetGame();
+        }
+        
     } else {
         text.innerHTML = "You don't have enough money to buy vegetables."
     }
@@ -121,6 +126,11 @@ function buyPoultryMeat() {
         updateStats();
         inventory.push("Poultry/meat");
         text.innerHTML = "You bought some red-meat and chicken."
+
+        if (money < 30){
+            update(locations[4]);
+        }
+
     } else {
         text.innerHTML = "You don't have enough money."
     }
@@ -133,6 +143,11 @@ function buyDairy() {
         inventory.push("Dairy");
         updateStats();
         text.innerHTML = "You bought milk, cheese, and yogurt."
+
+        if (money < 30){
+            update(locations[4])
+        }
+        
     } else {
         text.innerHTML = "You don't have enough money."
     }
@@ -151,6 +166,11 @@ function buyFood() {
         inventory.push("Takeaway");
         updateStats();
         text.innerHTML = "You bought some food. You will take home and eat. y.a."
+        
+        if (money < 30){
+            update(locations[4]);
+        }
+        
     } else {
         text.innerHTML = "You don't have enough cash."
     }
@@ -214,5 +234,14 @@ function askLoan() {
         "You : Aww! I appreciate it. Thanks."
         
     }
+}
+
+function resetGame(){
+    money = 100;
+    xp = 0;
+    toteBagCount = 0;
+    inventory = ["Water"];
+    updateStats();
+    update(locations[0]);
 }
 
